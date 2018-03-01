@@ -6,7 +6,7 @@ using Abp.Domain.Repositories;
 namespace Abp.MemoryDb.Repositories
 {
     //TODO: Implement thread-safety..?
-    public class MemoryRepository<TEntity, TPrimaryKey> : AbpRepositoryBase<TEntity, TPrimaryKey>
+    public partial class MemoryRepository<TEntity, TPrimaryKey> : AbpRepositoryBase<TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
         public virtual MemoryDatabase Database { get { return _databaseProvider.Database; } }

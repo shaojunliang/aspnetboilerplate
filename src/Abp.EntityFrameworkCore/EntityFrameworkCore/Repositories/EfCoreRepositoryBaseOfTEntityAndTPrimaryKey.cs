@@ -20,7 +20,7 @@ namespace Abp.EntityFrameworkCore.Repositories
     /// <typeparam name="TDbContext">DbContext which contains <typeparamref name="TEntity"/>.</typeparam>
     /// <typeparam name="TEntity">Type of the Entity for this repository</typeparam>
     /// <typeparam name="TPrimaryKey">Primary key of the entity</typeparam>
-    public class EfCoreRepositoryBase<TDbContext, TEntity, TPrimaryKey> : 
+    public partial class EfCoreRepositoryBase<TDbContext, TEntity, TPrimaryKey> : 
         AbpRepositoryBase<TEntity, TPrimaryKey>,
         ISupportsExplicitLoading<TEntity, TPrimaryKey>,
         IRepositoryWithDbContext

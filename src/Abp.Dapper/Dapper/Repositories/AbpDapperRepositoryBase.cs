@@ -18,7 +18,7 @@ namespace Abp.Dapper.Repositories
     /// <typeparam name="TEntity">The type of the entity.</typeparam>
     /// <typeparam name="TPrimaryKey">The type of the primary key.</typeparam>
     /// <seealso cref="IDapperRepository{TEntity,TPrimaryKey}" />
-    public abstract class AbpDapperRepositoryBase<TEntity, TPrimaryKey> : IDapperRepository<TEntity, TPrimaryKey> where TEntity : class, IEntity<TPrimaryKey>
+    public abstract partial class AbpDapperRepositoryBase<TEntity, TPrimaryKey> : IDapperRepository<TEntity, TPrimaryKey> where TEntity : class, IEntity<TPrimaryKey>
     {
         public static MultiTenancySides? MultiTenancySide { get; private set; }
 

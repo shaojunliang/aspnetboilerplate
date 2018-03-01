@@ -19,7 +19,7 @@ using DapperExtensions;
 
 namespace Abp.Dapper.Repositories
 {
-    public class DapperRepositoryBase<TEntity, TPrimaryKey> : AbpDapperRepositoryBase<TEntity, TPrimaryKey>
+    public partial class DapperRepositoryBase<TEntity, TPrimaryKey> : AbpDapperRepositoryBase<TEntity, TPrimaryKey>
         where TEntity : class, IEntity<TPrimaryKey>
     {
         private readonly IActiveTransactionProvider _activeTransactionProvider;
