@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+
 namespace Abp.Domain.Entities.Auditing
 {
     /// <summary>
@@ -10,6 +12,12 @@ namespace Abp.Domain.Entities.Auditing
         /// Last modifier user for this entity.
         /// </summary>
         long? LastModifierUserId { get; set; }
+
+        /// <summary>
+        /// Name of the last modifier user of this entity.
+        /// </summary>
+        [CanBeNull]
+        string LastModifierUserName { get; set; }
     }
 
     /// <summary>

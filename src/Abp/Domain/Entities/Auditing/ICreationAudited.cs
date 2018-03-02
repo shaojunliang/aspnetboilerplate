@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+
 namespace Abp.Domain.Entities.Auditing
 {
     /// <summary>
@@ -10,6 +12,12 @@ namespace Abp.Domain.Entities.Auditing
         /// Id of the creator user of this entity.
         /// </summary>
         long? CreatorUserId { get; set; }
+
+        /// <summary>
+        /// Name of the creator user of this entity.
+        /// </summary>
+        [CanBeNull]
+        string CreatorUserName { get; set; }
     }
 
     /// <summary>

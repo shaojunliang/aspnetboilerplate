@@ -12,7 +12,8 @@ namespace Abp.Domain.Entities.Auditing
             IMultiTenancyConfig multiTenancyConfig, 
             object entityAsObj, 
             int? tenantId,
-            long? userId)
+            long? userId,
+            string userName)
         {
             var entityWithCreationTime = entityAsObj as IHasCreationTime;
             if (entityWithCreationTime == null)
@@ -63,13 +64,17 @@ namespace Abp.Domain.Entities.Auditing
 
             //Finally, set CreatorUserId!
             entity.CreatorUserId = userId;
+
+            //Finally, set CreatorUserName!
+            entity.CreatorUserName = userName;
         }
 
         public static void SetModificationAuditProperties(
             IMultiTenancyConfig multiTenancyConfig,
             object entityAsObj,
             int? tenantId,
-            long? userId)
+            long? userId,
+            string userName)
         {
             if (entityAsObj is IHasModificationTime)
             {
@@ -111,6 +116,9 @@ namespace Abp.Domain.Entities.Auditing
 
             //Finally, set LastModifierUserId!
             entity.LastModifierUserId = userId;
+
+            //Finally, set LastModifierUserName!
+            entity.LastModifierUserName = userName;
         }
     }
 }

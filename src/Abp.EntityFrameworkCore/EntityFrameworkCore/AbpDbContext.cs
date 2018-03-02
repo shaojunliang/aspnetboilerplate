@@ -383,12 +383,12 @@ namespace Abp.EntityFrameworkCore
 
         protected virtual void SetCreationAuditProperties(object entityAsObj, long? userId)
         {
-            EntityAuditingHelper.SetCreationAuditProperties(MultiTenancyConfig, entityAsObj, AbpSession.TenantId, userId);
+            EntityAuditingHelper.SetCreationAuditProperties(MultiTenancyConfig, entityAsObj, AbpSession.TenantId, userId, AbpSession.GetUserName());
         }
 
         protected virtual void SetModificationAuditProperties(object entityAsObj, long? userId)
         {
-            EntityAuditingHelper.SetModificationAuditProperties(MultiTenancyConfig, entityAsObj, AbpSession.TenantId, userId);
+            EntityAuditingHelper.SetModificationAuditProperties(MultiTenancyConfig, entityAsObj, AbpSession.TenantId, userId, AbpSession.GetUserName());
         }
 
         protected virtual void CancelDeletionForSoftDelete(EntityEntry entry)
@@ -438,6 +438,7 @@ namespace Abp.EntityFrameworkCore
                         (entity is IMustHaveTenant && entity.As<IMustHaveTenant>().TenantId == AbpSession.TenantId))
                     {
                         entity.DeleterUserId = userId;
+                        entity.DeleterUserName = AbpSession.GetUserName();
                     }
                     else
                     {
@@ -447,6 +448,7 @@ namespace Abp.EntityFrameworkCore
                 else
                 {
                     entity.DeleterUserId = userId;
+                    entity.DeleterUserName = AbpSession.GetUserName();
                 }
             }
         }

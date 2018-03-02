@@ -31,6 +31,11 @@ namespace Abp.Domain.Entities.Auditing
         public virtual long? CreatorUserId { get; set; }
 
         /// <summary>
+        /// Creator of this entity.
+        /// </summary>
+        public virtual string CreatorUserName { get; set; }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         protected CreationAuditedEntity()

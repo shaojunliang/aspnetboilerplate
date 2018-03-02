@@ -31,6 +31,11 @@ namespace Abp.Application.Services.Dto
         public long? CreatorUserId { get; set; }
 
         /// <summary>
+        /// Creator user's name for this entity.
+        /// </summary>
+        public string CreatorUserName { get; set; }
+
+        /// <summary>
         /// Constructor.
         /// </summary>
         protected CreationAuditedEntityDto()

@@ -1,3 +1,5 @@
+using JetBrains.Annotations;
+
 namespace Abp.Domain.Entities.Auditing
 {
     /// <summary>
@@ -9,6 +11,12 @@ namespace Abp.Domain.Entities.Auditing
         /// Which user deleted this entity?
         /// </summary>
         long? DeleterUserId { get; set; }
+
+        /// <summary>
+        /// Name of the deleted user of this entity.
+        /// </summary>
+        [CanBeNull]
+        string DeleterUserName { get; set; }
     }
 
     /// <summary>

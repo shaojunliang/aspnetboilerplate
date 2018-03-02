@@ -30,6 +30,11 @@ namespace Abp.Application.Services.Dto
         public long? DeleterUserId { get; set; }
 
         /// <summary>
+        /// Deleter user's Name, if this entity is deleted,
+        /// </summary>
+        public string DeleterUserName { get; set; }
+
+        /// <summary>
         /// Deletion time, if this entity is deleted,
         /// </summary>
         public DateTime? DeletionTime { get; set; }
