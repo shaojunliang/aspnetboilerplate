@@ -24,6 +24,8 @@ namespace Abp.TestBase.SampleApplication.People
 
         public virtual long? DeleterUserId { get; set; }
 
+        public virtual string DeleterUserName { get; set; }
+
         public virtual DateTime? DeletionTime { get; set; }
     }
 }
